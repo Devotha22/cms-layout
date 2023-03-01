@@ -84,7 +84,7 @@ class App extends Component{
         
            {/* <h1>{this.state.student}</h1> */}
            
-          <input type="text"  onChange={this.search}/>
+          <input type="text" className="searchbox" onChange={this.search}/>
           <div className="app-dada">
         {filterData.map((result)=>{return(
           <div className="brand">
