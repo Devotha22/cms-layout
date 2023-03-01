@@ -82,15 +82,16 @@ class App extends Component{
     return(
       <div className='App'>
         
-           <h1>{this.state.student}</h1>
+           {/* <h1>{this.state.student}</h1> */}
            
           <input type="text"  onChange={this.search}/>
-          
+          <div className="app-dada">
         {filterData.map((result)=>{return(
-          <div>
+          <div className="brand">
             <p key={result.id}>{result.brand}{result.category}</p>
           </div>
-        )})}
+          
+        )})}</div>
 
         
 
