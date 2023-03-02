@@ -1,6 +1,8 @@
  import logo from './logo.svg';
 import './App.css';
 import{Component} from 'react';
+import List from './component/listofcomponent.jsx'
+ import Mylist from './component/list.jsx'
 
 
 
@@ -44,6 +46,7 @@ import{Component} from 'react';
 //   }
 //   render(){
 //     return(
+
 //       <div >
 //          <input type="text" onChange={
 //            (e)=>console.log(e.target.value)}placeholder='what are you searching for'/>
@@ -67,6 +70,7 @@ class App extends Component{
   }
   }
   search=(e)=>{
+
     this.setState
   ({student:e.target.value})}
   componentDidMount(){
@@ -77,25 +81,22 @@ class App extends Component{
   
   }
   render(){
-    const filterData=this.state.prod.filter(item=>{return item.brand.toLocaleLowerCase().includes(this.state.student.toLocaleLowerCase())
+    
+    const filterData=this.state.prod.filter(item=>
+      {return item.brand.toLocaleLowerCase().includes(
+        this.state.student.toLocaleLowerCase())
   });console.log(filterData);
     return(
       <div className='App'>
         
            {/* <h1>{this.state.student}</h1> */}
-           
-          <input type="text" className="searchbox" onChange={this.search}/>
+           <List/>
+          <input type="text" className="bg-neutral-400" onChange={this.search}/>
           <div className="app-dada">
-        {filterData.map((result)=>{return(
-          <div className="brand">
-            <p key={result.id}>{result.brand}{result.category}</p>
-          </div>
-          
-        )})}</div>
+        <Mylist user={filterData}/>
+          </div>      
+  </div>
 
-        
-
-        </div>
 
     )
   }

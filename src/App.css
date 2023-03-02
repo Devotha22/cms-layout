@@ -60,11 +60,16 @@
   display: flex;
   flex-wrap: wrap;
   margin-left: 20px;
+  background:black;
+}
+.list-of-data{
+  display:flex;
+  flex-wrap: wrap;
 }
 .searchbox{
   border:black 1px solid;
   border-radius:50px;
-  background:rgba(103, 168, 168, 0.815);
+  /* background:rgba(103, 168, 168, 0.815); */
   color:black;
   width:50vw;
   height:4vh;
