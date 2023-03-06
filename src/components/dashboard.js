@@ -19,7 +19,7 @@ class Dashboard extends Component{
 </div>
 </div>
 
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+<div class="max-w-sm bg-black border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     
     <div class="p-5">
         <a href="#">
