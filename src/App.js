@@ -1,105 +1,44 @@
- import logo from './logo.svg';
-import './App.css';
-import{Component} from 'react';
+//  import logo from './logo.svg';
+ import './App.css';
+import {Component} from 'react';
+import Navigation from './components/navigation';
+import Body from './components/body';
+import {Routes,Route} from 'react-router-dom';
+import Footer from './components/footer.js';
+import Aboutus from './components/aboutus.js';
+import Services from './components/services.js';
+import Login from './components/login.js';
+import Contact from './components/contact.js';
+import Dashboard from './components/dashboard';
+import Form from './components/form';
+import Signup from './components/signup';
 
+ class App extends Component{
+   constructor(props){
+     super(props);
+   }
 
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// class App extends Component{
-//   constructor(){
-//   // console.log('constructor');
-//   super()
-//   this.state={
-//     users:["My name is devotha"]
-//   }
-//   }
-//   componentDidMount(){
-//     // console.log('DidMount')
-//     fetch('https://jsonplaceholder.typicode.com/users')
-//     .then((res)=>console.log(res.json))
-//     .then(nameList=>{
-//       console.log(nameList)
-//       this.setState({users:nameList});
-//     })
-//   }
-//   render(){
-//     return(
-//       <div >
-//          <input type="text" onChange={
-//            (e)=>console.log(e.target.value)}placeholder='what are you searching for'/>
-//           {
-            
-//           this.state.users.map((data)=>{
-//             return <h1 key ={data.id}> {data.name}</h1>
-//           })
-//          }
-  
-//          </div>
-//     )
-//   }
-// }
-class App extends Component{
-  constructor(){
-  super()
-  this.state={
-    student:'',
-    prod:[]
-  }
-  }
-  search=(e)=>{
-    this.setState
-  ({student:e.target.value})}
-  componentDidMount(){
-    fetch('https://dummyjson.com/products')
-    .then(res=>res.json())
-    .then(result=>{this.setState({prod:result.products});
-    });
-  
-  }
   render(){
-    const filterData=this.state.prod.filter(item=>{return item.brand.toLocaleLowerCase().includes(this.state.student.toLocaleLowerCase())
-  });console.log(filterData);
     return(
-      <div className='App'>
-        
-           {/* <h1>{this.state.student}</h1> */}
-           
-          <input type="text" className="searchbox" onChange={this.search}/>
-          <div className="app-dada">
-        {filterData.map((result)=>{return(
-          <div className="brand">
-            <p key={result.id}>{result.brand}{result.category}</p>
-          </div>
-          
-        )})}</div>
-
-        
-
-        </div>
-
+    <div>
+    <Routes>
+      <Route path="/home" element={<Body/>}/>
+      <Route path="/aboutus" element={<Aboutus/>}/>
+      <Route path="/services" element={<Services/>}/>
+      <Route path="/contact" element={<Contact/>}/>
+      <Route path="/login" element={<Signup/>}/>
+      <Route path="/login/dashboard" element={<Login/>}/>
+      <Route path="/login/newblog" element={<Form/>}/>
+  </Routes>
+    
+      {/* <Footer/> */}
+    </div>
+   
     )
   }
-}
+ }
  export default App;
- 
+
+
+
 
